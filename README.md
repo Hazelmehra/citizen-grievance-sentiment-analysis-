@@ -30,4 +30,34 @@ This project addresses that gap by building an automated pipeline that:
 | `Agency Name` | Government agency associated with the complaint |
 | `Resolution Description` | Description of how the complaint was resolved |
 
+## Project Roadmap
+
+| Week | Focus | Status |
+|---|---|---|
+| Week 1 | Data Collection, Text Preprocessing & EDA | ✅ Complete |
+| Week 2 | Topic Modeling & Complaint Categorization | ✅ Complete |
+| Week 3 | Sentiment Analysis & Urgency Scoring | 🔄 In Progress |
+| Week 4 | API Development & Deployment | ⬜ Pending |
+
+## Week 1 — Data Preprocessing & Exploratory Data Analysis
+
+**Objective:** Clean raw complaint text and explore patterns in citizen feedback.
+
+**Key steps:**
+- Loaded and filtered the 311 dataset to focus on well-represented complaint categories
+- Built a complete text preprocessing pipeline:
+  - Lowercasing
+  - URL removal
+  - Special character and punctuation removal
+  - Tokenization
+  - Stopword removal
+  - Lemmatization
+- Generated Word Cloud visualizations to identify frequently occurring complaint terms
+- Performed Unigram and Bigram frequency distribution analysis
+- Applied spaCy for Part-of-Speech tagging and Named Entity Recognition to explore
+  grammatical structure and location references within complaint text
+- Documented all findings with clear markdown explanations throughout the notebook
+
+**Output:** `cleaned_complaints.csv`
+
 
