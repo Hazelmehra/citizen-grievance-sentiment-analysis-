@@ -60,4 +60,62 @@ This project addresses that gap by building an automated pipeline that:
 
 **Output:** `cleaned_complaints.csv`
 
+## Week 2 — Topic Modeling & Complaint Categorization
+
+**Objective:** Build a supervised model to automatically classify complaints by type.
+
+**Key decision — Label Selection:**
+During analysis, `Agency Name` was found to be heavily imbalanced (over 99% of records
+belonged to a single agency), making it unsuitable as a classification target. `Complaint
+Type` was selected instead, offering 13+ well-distributed categories suitable for
+meaningful classification.
+
+**Key decision — Avoiding Label Leakage:**
+Input text was restricted to the `Descriptor` column only. Earlier combination of
+`Complaint Type` with the input text was identified as a source of label leakage and
+corrected.
+
+**Modeling pipeline:**
+- Text vectorized using **TF-IDF** (3,000 features)
+- Class distribution proportions analyzed to surface minority-class risk
+- Three models trained and compared:
+  - **Naive Bayes** (baseline)
+  - **Logistic Regression** (with `class_weight='balanced'`)
+  - **Random Forest** (with `class_weight='balanced'`)
+- Models evaluated using **Accuracy** and **Macro F1-score**, with Macro F1 prioritized
+  to ensure fair performance across minority complaint categories
+- **5-fold Cross-Validation** performed to confirm model generalization
+- Confusion Matrix and full Classification Report generated for error analysis
+
+**Results:**
+
+| Model | Accuracy | Macro F1-Score |
+|---|---|---|
+| Naive Bayes (Baseline) | ~0.87 | ~0.74 |
+| Logistic Regression | ~0.88 | ~0.78+ |
+| Random Forest | ~0.88 | ~0.78+ |
+
+**Final model selected:** Logistic Regression — chosen for its strong Macro F1
+performance, fast inference time, and interpretability for deployment.
+
+**Output:** `complaint_classifier_model.pkl`, `tfidf_vectorizer.pkl`
+
+## Tech Stack
+
+| Component | Technology |
+|---|---|
+| Language | Python |
+| Data Processing | Pandas, NumPy |
+| NLP | NLTK, spaCy |
+| Feature Engineering | Scikit-learn (TF-IDF) |
+| Modeling | Scikit-learn (Naive Bayes, Logistic Regression, Random Forest) |
+| Visualization | Matplotlib, Seaborn, WordCloud |
+| Environment | Google Colab |
+
+## Upcoming Work
+
+- **Week 3:** Sentiment classification using a pretrained Transformer model
+  (HuggingFace), with priority scoring based on detected urgency
+- **Week 4:** Model serving via FastAPI, with a Streamlit interface for demonstration
+
 
