@@ -4,10 +4,6 @@ grievances, classifies them into relevant complaint categories for efficient dep
 routing, and (in upcoming phases) performs sentiment analysis to prioritize issues based
 on urgency and emotional tone.
 
-This project was developed as part of a technical internship program focused on building
-enterprise-grade, MLOps-aligned data science solutions for the Government & Public Sector
-domain.
-
 ## Problem Statement
 Public grievance redressal systems are often slow, disorganized, and reliant on manual
 review. Civic officials must read through large volumes of citizen feedback to determine
