@@ -12,3 +12,5 @@ uvicorn
 pydantic
 streamlit
 python-multipart
+pyngrok
+vaderSentiment
