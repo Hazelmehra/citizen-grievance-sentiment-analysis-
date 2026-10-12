@@ -214,10 +214,6 @@ citizen-grievance-sentiment-analysis/
 5. Run the FastAPI cell to start the backend server
 6. Run the Streamlit + ngrok cell to get a public URL for the UI
 
-## Author
-
-Developed as part of the AI/ML Technical Internship Program  
-**Infotact Solutions**
 
 
 
